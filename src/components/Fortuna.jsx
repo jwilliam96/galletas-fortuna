@@ -14,11 +14,7 @@ const Fortuna = ({ data }) => {
             <p className="fortuna__autor">{data[position].author}</p>
           </div>
           <figure className="content__text">
-            <img
-              className="content__pinture"
-              src="public/mensanger.png"
-              alt=""
-            />
+            <img className="content__pinture" src="/mensanger.png" alt="" />
           </figure>
         </div>
         <button className="button" onClick={changePosition}>

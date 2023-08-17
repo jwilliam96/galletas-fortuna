@@ -65,16 +65,16 @@
 }
 
 .fondo1 {
-  background-image: url(fondo1.png);
+  background-image: url(/fondo1.png);
 }
 .fondo2 {
-  background-image: url(fondo2.png);
+  background-image: url(/fondo2.png);
 }
 .fondo3 {
-  background-image: url(fondo3.png);
+  background-image: url(/fondo3.png);
 }
 .fondo4 {
-  background-image: url(fondo4.png);
+  background-image: url(/fondo4.png);
 }
 
 @media screen and (max-width: 750px) {
