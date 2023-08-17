@@ -1,29 +1,31 @@
-import React, { useState } from "react";
-import Button from "./Button";
+import "./Fortuna.css";
+import useFetch from "../hooks/useFetch";
 
 const Fortuna = ({ data }) => {
-  const [position, setPosition] = useState(0);
-  const [back, setBack] = useState(1);
-
-  const changePosition = () => {
-    const random = Math.floor(Math.random() * data.length);
-    setPosition(random);
-    const backRandom = Math.floor(Math.random() * (5 - 1) + 1);
-    setBack(backRandom);
-  };
+  const [position, back, changePosition] = useFetch(data);
 
   return (
-    <section
-      className="container"
-      style={{ backgroundImage: `url(/fondo${back}.png)` }}
-    >
-      <h1>GALLETA DE LA FORTUNA</h1>
-      <div className="content-div-img">
-        <p className="text">{data[position].phrase}</p>
-        <p className="text-footer">{data[position].author}</p>
-      </div>
-      <Button changePosition={changePosition} />
-    </section>
+    <article className={`article fondo${back}`}>
+      <section className="section">
+        <h1 className="title">GALLETA DE LA FORTUNA</h1>
+        <div className="fortuna">
+          <div className="fortuna__content">
+            <p className="fortuna__phrases">{data[position].phrase}</p>
+            <p className="fortuna__autor">{data[position].author}</p>
+          </div>
+          <figure className="content__text">
+            <img
+              className="content__pinture"
+              src="public/mensanger.png"
+              alt=""
+            />
+          </figure>
+        </div>
+        <button className="button" onClick={changePosition}>
+          Prueba tu suerte
+        </button>
+      </section>
+    </article>
   );
 };
 
